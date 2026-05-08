@@ -105,4 +105,198 @@ employees['name'] = 'Anthony Maraka'
 
 print(employees)
 
-employees.update({})
+#add dictionary items
+dict = {
+    'type': 'car',
+    'model': 'Jeep',
+    'year': 2027
+}
+
+dict['price'] = 10000000
+dict['registered'] = True
+dict['owner'] = 'Anthony Maraka'
+
+print(dict)
+
+dict.update({'color':'red', 'interior':'leather biege'}) #update() method
+print(dict)
+
+#Removing items from the dictionary
+
+dict.pop('price')
+dict.pop('color') #removing using the pop() method
+print(dict)
+
+dict.popitem()
+print(dict)   # removes the last added item
+
+del dict['type']
+print(dict) #del removes the specified key name
+
+del dict # removes the dictionary compleletely
+
+my_dict = {
+    'item': 'Jeans',
+    'color': 'blue',
+    'manufacturer': 'denim',
+    'price': '2000'
+}
+
+my_dict.clear() #empties the dictionary completely
+print(my_dict)
+
+#Loop dictionaries
+
+employees_dict = {
+    'name': "Anthony",
+    'role': 'Data Analyst',
+    'city': 'nairobi',
+    'age': 28
+}
+for k in employees_dict:
+    print(k) #prints only the keys of the dictionary
+
+for v in employees_dict:
+    print(employees_dict[v]) #prints only the values
+
+places = {
+    'name':'Nairobi',
+    'country': 'kenya',
+    'residents': 'multi-national',
+    'safe': True
+}
+for p in places.keys():
+    print(p) #prints the dictionary keys
+for p in places.values():
+    print(p)  #prints the dictionary values
+
+for k, v in employees_dict.items():
+    print(k, v) #prints both keys and values of the dictionary
+
+new_dict = employees_dict.copy()
+print(new_dict)
+new_dict.update({'employer': 'microsoft', 'is_expert': True})
+print(new_dict)
+new_dict1 = dict(new_dict) #another way to copy a dictionary
+print(new_dict1)
+
+#Nested Dictionaries
+my_Employees = {
+    'employee1':{
+        'name': 'Steve Korocho',
+        'age' : 23,
+        'role': 'web developer',
+        'city': 'chicago illinois',
+        'still_employed': True
+    },
+    'employee2':{
+        'name': 'Ahmed Punda',
+        'age': 30,
+        'role': 'driver',
+        'city': 'nairobi',
+        'still_employed': True
+    },
+    'employee3':{
+        'name':'James mbane',
+        'age':35,
+        'role': 'machine learning engineer',
+        'city': 'milan',
+        'still_employed': True
+    }
+}
+
+#create dictionaries then nest them in one bigger dictionary
+
+child1 = {
+    'name':'ken',
+    'age': 11,
+    'studying': True
+}
+
+child2 = {
+    'name':'jane',
+    'age':9,
+    'studying': True
+}
+child3={
+    'name':'Progenstein',
+    'age': 2,
+    'studying': False
+}
+
+my_Kids = {
+    'child1':child1,
+    'child2': child2,
+    'child3' : child3
+}
+
+print(my_Kids)
+#access items in nested dictionaries
+print(my_Kids['child2']['name'])
+print(my_Kids['child3']['studying'])
+
+#loop through a nested dictionary
+for x, obj in my_Kids.items():
+    print(x)
+
+    for y in obj:
+        print(y + ':', obj[y])
+
+
+for x, obj in my_Employees.items():
+    print(x)
+    for y in obj:
+        print(y + ':', obj[y])
+
+
+leader1 = {
+    'name':'raphael kerio',
+    'positon':'member of parliament',
+    'term': 2,
+    'educated': True
+}
+
+leader2 = {
+    'name': 'eliud',
+    'position': 'member of county assemly',
+    'term': 1,
+    'educated': True
+}
+
+leader3 = {
+    'name' : 'Napotikan',
+    'position':'governor',
+    'term' : 1,
+    'educated' : False
+}
+
+leaders = {
+    'leader1':leader1,
+    'leader2':leader2,
+    'leader3':leader3,
+}
+print(leaders)
+
+aspirants_mca = {
+    'asp1' : {
+        'name': 'eliud emoni',
+        'is_in_power': True,
+        'projected_terms': 1
+    },
+    'asp2' : {
+        'name':'yemen guy',
+        'is_in_power': False,
+        'projected_terms': 2
+    },
+    'asp3' : {
+        'name': 'boiz flani',
+        'is_in_power': False,
+        'projected_terms': None
+    }
+}
+
+print(aspirants_mca)
+for a, objects in aspirants_mca.items():
+    print(print(a))
+    for b in objects:
+        print(b + ':', objects[b])
